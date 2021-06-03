@@ -5,10 +5,11 @@ import { AuthGuard } from './guard/auth.guard';
 const routes: Routes = [
   {
     path: '',
-    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule), 
-    canActivate:[AuthGuard]
+    loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
+    //canActivate:[AuthGuard]
 
-  },
+  }
+  /*
   {
      path: 'home1',
      loadChildren: () => import('./home/home.module').then( m => m.HomePageModule)
@@ -32,8 +33,9 @@ const routes: Routes = [
   {
     path: 'register',
     loadChildren: () => import('./register/register.module').then( m => m.RegisterPageModule)
-  }
+  }*/
 ];
+
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })
